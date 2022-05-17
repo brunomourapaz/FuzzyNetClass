@@ -10,6 +10,7 @@ For the execution of the experiments, [datasets](https://github.com/emmonks/data
 
 ## Publications
 
+1. Towards Interval-Valued Fuzzy Approach to Video Streaming Traffic Classification
 
 ## Reference
 [1] [C. Wagner, "Juzzy – A Java based Toolkit for Type-2 Fuzzy Logic", Proceedings of the IEEE Symposium Series on Computational Intelligence, Singapore, April 2013.](http://juzzy.wagnerweb.net/)
