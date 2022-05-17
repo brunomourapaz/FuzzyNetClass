@@ -8,6 +8,9 @@ The modeling of FuzzyNetClass system was performed using the Interval Type-2 Fuz
 
 For the execution of the experiments, [datasets](https://github.com/emmonks/datasets) were generated from captures, and publicly available datasets.
 
+## Publications
+
+
 ## Reference
 [1] [C. Wagner, "Juzzy – A Java based Toolkit for Type-2 Fuzzy Logic", Proceedings of the IEEE Symposium Series on Computational Intelligence, Singapore, April 2013.](http://juzzy.wagnerweb.net/)
 
