@@ -6,6 +6,8 @@ FuzzyNetClass was conceived for classifying network traffic to identify video st
   
 The modeling of FuzzyNetClass system was performed using the Interval Type-2 Fuzzy Logic System Toolbox (IT2FLT) module [[2]](https://ieeexplore.ieee.org/document/4295341) and Juzzy [[1]](http://juzzy.wagnerweb.net/). 
 
+For the execution of the experiments, [[datasets]](https://github.com/emmonks/datasets) were generated from captures, and publicly available datasets.
+
 ## Reference
 [1] [C. Wagner, "Juzzy – A Java based Toolkit for Type-2 Fuzzy Logic", Proceedings of the IEEE Symposium Series on Computational Intelligence, Singapore, April 2013.](http://juzzy.wagnerweb.net/)
 
