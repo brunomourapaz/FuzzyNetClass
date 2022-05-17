@@ -4,7 +4,7 @@ FuzzyNetClass addresses the uncertainties and inaccuracies in the network traffi
 
 FuzzyNetClass was conceived for classifying network traffic to identify video streaming flows. The FuzzyNetClass proposal considers a rule base acting in three stages: Fuzzification, Inference, and Defuzzification, returning as output the classification level of the analyzed network flow, allowing (or not) its identification as a video.
   
-The modeling of FuzzyNetClass system was performed using the Interval Type-2 Fuzzy Logic System Toolbox (IT2FLT) module [[2]](https://ieeexplore.ieee.org/document/4295341) and Juzzy [[1]](http://juzzy.wagnerweb.net/). 
+The modeling of FuzzyNetClass system was performed using the Interval Type-2 Fuzzy Logic System Toolbox module [[2]](https://ieeexplore.ieee.org/document/4295341) and Juzzy [[1]](http://juzzy.wagnerweb.net/). 
 
 For the execution of the experiments, [datasets](https://github.com/emmonks/datasets) were generated from captures, and publicly available datasets.
 
