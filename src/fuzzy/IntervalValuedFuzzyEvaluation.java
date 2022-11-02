@@ -339,7 +339,7 @@ public final class IntervalValuedFuzzyEvaluation {
         //show the output of the raw centroids
         System.out.println("Centroid of the output for Video (based on centroid type reduction):");
 
-        TreeMap<Output, Object[]> centroid = rulebase.evaluateGetCentroid(1);
+        TreeMap<Output, Object[]> centroid = rulebase.evaluateGetCentroid(0);
         Object[] centroidTip = centroid.get(video);
         Tuple centroidTipXValues = (Tuple) centroidTip[0];
         double centroidTipYValues = ((Double) centroidTip[1]);

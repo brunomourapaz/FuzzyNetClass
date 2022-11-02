@@ -29,6 +29,7 @@ import java.util.List;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.filechooser.FileNameExtensionFilter;
+import org.hsqldb.Library;
 import util.LibFile;
 import util.LocalShell;
 import util.MyComparator;
@@ -316,17 +317,17 @@ public class frmClassificador extends javax.swing.JFrame {
                         // faz o recorte da linha para alimentar objeto DataSet
                         String[] vect = line.split(strSeparadorCsv);
 
-                        double fwdPacketLengthMean = Double.parseDouble(vect[0]);  //Fwd Packet Length Mean
-                        double fwdPacketLengthStd = Double.parseDouble(vect[1]); //Fwd Packet Length Std
-                        double bwdIATTotal = Double.parseDouble(vect[2]); // Bwd IAT Total
-                        double packetLengthMean = Double.parseDouble(vect[3]); // Packet Length Mean
-                        String flowLabel = vect[4]; // Label
-                        double normFwdPacketLengthMean = Double.parseDouble(vect[5]);  //NormFwd_Packet_Length_Mean
-                        double normPacketLengthMean = Double.parseDouble(vect[6]); // NormPacket_Length_Mean  
+                        // double fwdPacketLengthMean = Double.parseDouble(vect[0]);  //Fwd Packet Length Mean
+                        // double fwdPacketLengthStd = Double.parseDouble(vect[1]); //Fwd Packet Length Std
+                        // double bwdIATTotal = Double.parseDouble(vect[2]); // Bwd IAT Total
+                        // double packetLengthMean = Double.parseDouble(vect[3]); // Packet Length Mean
+                        String flowLabel = vect[3]; // Label
+                        //double normFwdPacketLengthMean = Double.parseDouble(vect[]);  //NormFwd_Packet_Length_Mean
+                        double normPacketLengthMean = Double.parseDouble(vect[2]); // NormPacket_Length_Mean  
 
-                        double normFwdPacketLengthStd = Double.parseDouble(vect[7]);  // NormFwd_Packet_Length_Std
-                        double normBwdIATTotal = Double.parseDouble(vect[8]);  // NormBwd_IAT_Total
-                        int sequencial = Integer.parseInt(vect[9]); // sequencial
+                        double normFwdPacketLengthStd = Double.parseDouble(vect[0]);  // NormFwd_Packet_Length_Std
+                        double normBwdIATTotal = Double.parseDouble(vect[1]);  // NormBwd_IAT_Total
+                        int sequencial = Integer.parseInt(vect[4]); // sequencial
 
                         // cria objeto do sistema de inferencia fuzzy 
                         // e seta os valores das variáveis/atributos de entrada do sistema fuzzy
@@ -342,15 +343,15 @@ public class frmClassificador extends javax.swing.JFrame {
                         // Seta os valores de atributos no objeto através do dataset csv
 
                         // seta os valores do objeto fs para gerar o arquivo de saída
-                        ds.setFwdPacketLengthMean(fwdPacketLengthMean);
-                        ds.setFwdPacketLengthStd(fwdPacketLengthStd);
-                        ds.setBwdIATTotal(bwdIATTotal);
-                        ds.setPacketLengthMean(packetLengthMean);
+                        // ds.setFwdPacketLengthMean(fwdPacketLengthMean);
+                        // ds.setFwdPacketLengthStd(fwdPacketLengthStd);
+                        // ds.setBwdIATTotal(bwdIATTotal);
+                        // ds.setPacketLengthMean(packetLengthMean);
                         ds.setFloxLabel(flowLabel);
-                        ds.setNormFwdPacketLengthMean(normFwdPacketLengthMean);
+                        // ds.setNormFwdPacketLengthMean(normFwdPacketLengthMean);
                         ds.setNormPacketLengthMean(normPacketLengthMean);
                         ds.setNormFwdPacketLengthStd(normFwdPacketLengthStd);
-                        ds.setNormBwdIATTotal(normBwdIATTotal);
+                        ds.setNormBwdIATTotal(Library.round(normBwdIATTotal, 6));
 
                         ds.setxPonctual(fs.getxPonctual());
                         ds.setxInf(fs.getxInf());
