@@ -6,9 +6,8 @@
 package entities;
 
 
-import com.opencsv.bean.CsvBindByName;
+
 import com.opencsv.bean.CsvBindByPosition;
-import com.opencsv.bean.CsvBindByPositions;
 import java.util.Objects;
 
 /**

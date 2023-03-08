@@ -88,6 +88,9 @@ public final class IntervalValuedFuzzyEvaluation {
 
     private double highVideoUpperBound;
     private double highVideoLowerBound;
+    
+    double lowerLevels[] = {0.9, 0.9};
+    double upperLevels[] = {1.0, 1.0};
 
     //public IntervalValuedFuzzyEvaluation() {}
     public IntervalValuedFuzzyEvaluation(double inPacketLengthMean, double inPacketLengthStd, double inBackwardIatTotal,
@@ -108,66 +111,66 @@ public final class IntervalValuedFuzzyEvaluation {
         //Membership Functions Model
         // MF for PacketLengthMean
         //MF1='limited':'itrapatype2',[-2.269 -0.9 0.45 2.4 -1.329 -0.01882 1.5 3.5 0.9]
-        T1MF_Trapezoidal lowPacketLengthMeanUMF = new T1MF_Trapezoidal("Upper MF for Low PacketLengthMean", new double[]{-2.27, -0.9, 1.5, 3.5});
-        T1MF_Trapezoidal lowPacketLengthMeanLMF = new T1MF_Trapezoidal("Lower MF for Low PacketLengthMean", new double[]{-1.3, -0.2, 0.45, 2.4});
+        T1MF_Trapezoidal lowPacketLengthMeanUMF = new T1MF_Trapezoidal("Upper MF for Low PacketLengthMean", new double[]{-2.27, -0.9, 1.5, 3.5}, upperLevels);
+        T1MF_Trapezoidal lowPacketLengthMeanLMF = new T1MF_Trapezoidal("Lower MF for Low PacketLengthMean", new double[]{-1.3, -0.2, 0.45, 2.4}, lowerLevels);
         IntervalT2MF_Trapezoidal lowPacketLengthMeanMF = new IntervalT2MF_Trapezoidal("IT2MF for Low PacketLengthMean", lowPacketLengthMeanUMF, lowPacketLengthMeanLMF);
 
         //MF2='reasonable':'itrapatype2',[1.6 3.8 5.4 7.4 2.6 4.6 6.3 8.4 0.9]
-        T1MF_Trapezoidal reasonablePacketLengthMeanUMF = new T1MF_Trapezoidal("Upper MF for Reasonable PacketLengthMean", new double[]{1.6, 3.8, 6.3, 8.4});
-        T1MF_Trapezoidal reasonablePacketLengthMeanLMF = new T1MF_Trapezoidal("Lower MF for Reasonable PacketLengthMean", new double[]{2.6, 4.6, 5.4, 7.4});
+        T1MF_Trapezoidal reasonablePacketLengthMeanUMF = new T1MF_Trapezoidal("Upper MF for Reasonable PacketLengthMean", new double[]{1.6, 3.8, 6.3, 8.4}, upperLevels);
+        T1MF_Trapezoidal reasonablePacketLengthMeanLMF = new T1MF_Trapezoidal("Lower MF for Reasonable PacketLengthMean", new double[]{2.6, 4.6, 5.4, 7.4}, lowerLevels);
         IntervalT2MF_Trapezoidal reasonablePacketLengthMeanMF = new IntervalT2MF_Trapezoidal("IT2MF for Reasonable PacketLengthMean", reasonablePacketLengthMeanUMF, reasonablePacketLengthMeanLMF);
 
         //MF3='high':'itrapatype2',[6.65 7.65 10.19 12.34 7.65 8.5 11.19 13.34 0.9]
-        T1MF_Trapezoidal highPacketLengthMeanUMF = new T1MF_Trapezoidal("Upper MF for High PacketLengthMean", new double[]{6.65, 7.65, 11.19, 13.34});
-        T1MF_Trapezoidal highPacketLengthMeanLMF = new T1MF_Trapezoidal("Lower MF for High PacketLengthMean", new double[]{7.65, 8.5, 10.19, 12.34});
+        T1MF_Trapezoidal highPacketLengthMeanUMF = new T1MF_Trapezoidal("Upper MF for High PacketLengthMean", new double[]{6.65, 7.65, 11.19, 13.34}, upperLevels);
+        T1MF_Trapezoidal highPacketLengthMeanLMF = new T1MF_Trapezoidal("Lower MF for High PacketLengthMean", new double[]{7.65, 8.5, 10.19, 12.34}, lowerLevels);
         IntervalT2MF_Trapezoidal highPacketLengthMeanMF = new IntervalT2MF_Trapezoidal("IT2MF for High PacketLengthMean", highPacketLengthMeanUMF, highPacketLengthMeanLMF);
 
         // MF for packetLengthStd
         //MF1='small':'itrapatype2',[-2.27 -0.8 0.5 2.4 -1.327 -0.01682 1.35 3.4 0.9]
-        T1MF_Trapezoidal lowPacketLengthStdUMF = new T1MF_Trapezoidal("Upper MF for Small PacketLengthStd", new double[]{-2.27, -0.8, 1.35, 3.4});
-        T1MF_Trapezoidal lowPacketLengthStdLMF = new T1MF_Trapezoidal("Lower MF for Small PacketLengthStd", new double[]{-1.3, -0.02, 0.5, 2.4});
+        T1MF_Trapezoidal lowPacketLengthStdUMF = new T1MF_Trapezoidal("Upper MF for Small PacketLengthStd", new double[]{-2.27, -0.8, 1.35, 3.4}, upperLevels);
+        T1MF_Trapezoidal lowPacketLengthStdLMF = new T1MF_Trapezoidal("Lower MF for Small PacketLengthStd", new double[]{-1.3, -0.02, 0.5, 2.4}, lowerLevels);
         IntervalT2MF_Trapezoidal lowPacketLengthStdMF = new IntervalT2MF_Trapezoidal("IT2MF for Small PacketLengthStd", lowPacketLengthStdUMF, lowPacketLengthStdLMF);
 
         //MF3='average':'itrapatype2',[1.5 4 5.2 7.5 2.5 4.8 6 8.5 0.9]
-        T1MF_Trapezoidal reasonablePacketLengthStdUMF = new T1MF_Trapezoidal("Upper MF for Average PacketLengthStd", new double[]{1.5, 4, 6, 8.5});
-        T1MF_Trapezoidal reasonablePacketLengthStdLMF = new T1MF_Trapezoidal("Lower MF for Average PacketLengthStd", new double[]{2.5, 4.8, 5.2, 7.5});
+        T1MF_Trapezoidal reasonablePacketLengthStdUMF = new T1MF_Trapezoidal("Upper MF for Average PacketLengthStd", new double[]{1.5, 4, 6, 8.5}, upperLevels);
+        T1MF_Trapezoidal reasonablePacketLengthStdLMF = new T1MF_Trapezoidal("Lower MF for Average PacketLengthStd", new double[]{2.5, 4.8, 5.2, 7.5}, lowerLevels);
         IntervalT2MF_Trapezoidal reasonablePacketLengthStdMF = new IntervalT2MF_Trapezoidal("IT2MF for Average PacketLengthStd", reasonablePacketLengthStdUMF, reasonablePacketLengthStdLMF);
 
         //MF2='big':'itrapatype2',[6.5 8.5 10 12 7.5 9.2 11.19 13.34 0.9]
-        T1MF_Trapezoidal highPacketLengthStdUMF = new T1MF_Trapezoidal("Upper MF for High PacketLengthStd", new double[]{6.5, 8.5, 11.19, 13.34});
-        T1MF_Trapezoidal highPacketLengthStdLMF = new T1MF_Trapezoidal("Lower MF for High PacketLengthStd", new double[]{7.5, 9.2, 10, 12});
+        T1MF_Trapezoidal highPacketLengthStdUMF = new T1MF_Trapezoidal("Upper MF for High PacketLengthStd", new double[]{6.5, 8.5, 11.19, 13.34}, upperLevels);
+        T1MF_Trapezoidal highPacketLengthStdLMF = new T1MF_Trapezoidal("Lower MF for High PacketLengthStd", new double[]{7.5, 9.2, 10, 12}, lowerLevels);
         IntervalT2MF_Trapezoidal highPacketLengthStdMF = new IntervalT2MF_Trapezoidal("IT2MF for High PacketLengthStd", highPacketLengthStdUMF, highPacketLengthStdLMF);
 
         // MF for BackwardIatTotal
         //MF1='small':'itrapatype2',[-2.27 -0.8 0.5 2.4 -1.327 -0.01682 1.35 3.4 0.9]
-        T1MF_Trapezoidal lowBackwardIatTotalUMF = new T1MF_Trapezoidal("Upper MF for Low BackwardIatTotal", new double[]{-2.27, -0.8, 1.35, 3.4});
-        T1MF_Trapezoidal lowBackwardIatTotalLMF = new T1MF_Trapezoidal("Lower MF for Low BackwardIatTotal", new double[]{-1.327, -0.01682, 0.5, 2.4});
+        T1MF_Trapezoidal lowBackwardIatTotalUMF = new T1MF_Trapezoidal("Upper MF for Low BackwardIatTotal", new double[]{-2.27, -0.8, 1.35, 3.4}, upperLevels);
+        T1MF_Trapezoidal lowBackwardIatTotalLMF = new T1MF_Trapezoidal("Lower MF for Low BackwardIatTotal", new double[]{-1.327, -0.01682, 0.5, 2.4}, lowerLevels);
         IntervalT2MF_Trapezoidal lowBackwardIatTotalMF = new IntervalT2MF_Trapezoidal("IT2MF for Low BackwardIatTotal", lowBackwardIatTotalUMF, lowBackwardIatTotalLMF);
 
         //MF2='average':'itrapatype2',[1.5 4 5.2 7.5 2.5 4.8 6 8.5 0.9]
-        T1MF_Trapezoidal reasonableBackwardIatTotalUMF = new T1MF_Trapezoidal("Upper MF for Reasonable BackwardIatTotal", new double[]{1.5, 4, 6, 8.5});
-        T1MF_Trapezoidal reasonableBackwardIatTotalLMF = new T1MF_Trapezoidal("Lower MF for Reasonable BackwardIatTotal", new double[]{2.5, 4.8, 5.2, 7.5});
+        T1MF_Trapezoidal reasonableBackwardIatTotalUMF = new T1MF_Trapezoidal("Upper MF for Reasonable BackwardIatTotal", new double[]{1.5, 4, 6, 8.5}, upperLevels);
+        T1MF_Trapezoidal reasonableBackwardIatTotalLMF = new T1MF_Trapezoidal("Lower MF for Reasonable BackwardIatTotal", new double[]{2.5, 4.8, 5.2, 7.5}, lowerLevels);
         IntervalT2MF_Trapezoidal reasonableBackwardIatTotalMF = new IntervalT2MF_Trapezoidal("IT2MF Reasonable BackwardIatTotal", reasonableBackwardIatTotalUMF, reasonableBackwardIatTotalLMF);
 
         //MF3='high':'itrapatype2',[6.5 8.5 10 12 7.5 9.2 11.19 13.34 0.9]
-        T1MF_Trapezoidal highBackwardIatTotalUMF = new T1MF_Trapezoidal("Upper MF for High RATIO", new double[]{6.5, 8.5, 11.19, 13.34});
-        T1MF_Trapezoidal highBackwardIatTotalLMF = new T1MF_Trapezoidal("Lower MF for High RATIO", new double[]{7.5, 9.2, 10, 12});
+        T1MF_Trapezoidal highBackwardIatTotalUMF = new T1MF_Trapezoidal("Upper MF for High RATIO", new double[]{6.5, 8.5, 11.19, 13.34}, upperLevels);
+        T1MF_Trapezoidal highBackwardIatTotalLMF = new T1MF_Trapezoidal("Lower MF for High RATIO", new double[]{7.5, 9.2, 10, 12}, lowerLevels);
         IntervalT2MF_Trapezoidal highBackwardIatTotalMF = new IntervalT2MF_Trapezoidal("IT2MF for High RATIO", highBackwardIatTotalUMF, highBackwardIatTotalLMF);
 
         // MF for Video
         //MF1='low':'itrapatype2',[-1.74698039215686 -0.590980392156862 -0.569980392156862 3.99901960784314 -1.24678039215686 0.079019607843138 0.409019607843138 4.99901960784314 0.9]
-        T1MF_Trapezoidal lowVideoUMF = new T1MF_Trapezoidal("Upper MF for Low Video", new double[]{-1.75, -0.6, 0.41, 5});
-        T1MF_Trapezoidal lowVideoLMF = new T1MF_Trapezoidal("Lower MF for Low Video", new double[]{-1.2, 0.08, -0.57, 4.0}); //
+        T1MF_Trapezoidal lowVideoUMF = new T1MF_Trapezoidal("Upper MF for Low Video", new double[]{-1.75, -0.6, 0.41, 5}, upperLevels);
+        T1MF_Trapezoidal lowVideoLMF = new T1MF_Trapezoidal("Lower MF for Low Video", new double[]{-1.2, 0.08, -0.57, 4.0}, lowerLevels); //
         IntervalT2MF_Trapezoidal lowVideoMF = new IntervalT2MF_Trapezoidal("IT2MF for Low Video ", lowVideoUMF, lowVideoLMF);
 
         //MF2='average':'itrapatype2',[0.5 4.5 4.83 8.5 1.5 5.16 5.5 9.5 0.9]
-        T1MF_Trapezoidal averageVideoUMF = new T1MF_Trapezoidal("Upper MF for Average Video", new double[]{0.5, 4.5, 5.5, 9.5});
-        T1MF_Trapezoidal averageVideoLMF = new T1MF_Trapezoidal("Lower MF for Average Video", new double[]{1.5, 5.16, 4.83, 8.5});
+        T1MF_Trapezoidal averageVideoUMF = new T1MF_Trapezoidal("Upper MF for Average Video", new double[]{0.5, 4.5, 5.5, 9.5}, upperLevels);
+        T1MF_Trapezoidal averageVideoLMF = new T1MF_Trapezoidal("Lower MF for Average Video", new double[]{1.5, 5.16, 4.83, 8.5}, lowerLevels);
         IntervalT2MF_Trapezoidal averageVideoMF = new IntervalT2MF_Trapezoidal("IT2MF for Average Video ", averageVideoUMF, averageVideoLMF);
 
         //MF3='high':'itrapatype2',[5 9.61 9.94 11.3 6 10.3 10.7 11.8 0.9]
-        T1MF_Trapezoidal highVideoUMF = new T1MF_Trapezoidal("Upper MF for High Video", new double[]{5, 9.6, 10.7, 11.8});
-        T1MF_Trapezoidal highVideoLMF = new T1MF_Trapezoidal("Lower MF for High Video", new double[]{6, 10.3, 9.94, 11.3});
+        T1MF_Trapezoidal highVideoUMF = new T1MF_Trapezoidal("Upper MF for High Video", new double[]{5, 9.6, 10.7, 11.8}, upperLevels);
+        T1MF_Trapezoidal highVideoLMF = new T1MF_Trapezoidal("Lower MF for High Video", new double[]{6, 10.3, 9.94, 11.3}, lowerLevels);
         IntervalT2MF_Trapezoidal highVideoMF = new IntervalT2MF_Trapezoidal("IT2MF for High Video ", highVideoUMF, highVideoLMF);
 
         //plotMFs("Priority Membership Functions", new IntervalT2MF_Interface[]{lowPriorityMF, averagePriorityMF, highPriorityMF}, 10);
@@ -339,7 +342,10 @@ public final class IntervalValuedFuzzyEvaluation {
         //show the output of the raw centroids
         System.out.println("Centroid of the output for Video (based on centroid type reduction):");
 
-        TreeMap<Output, Object[]> centroid = rulebase.evaluateGetCentroid(0);
+        // private final byte CENTEROFSETS = 0;
+	// private final byte CENTROID = 1;
+                
+        TreeMap<Output, Object[]> centroid = rulebase.evaluateGetCentroid(1);
         Object[] centroidTip = centroid.get(video);
         Tuple centroidTipXValues = (Tuple) centroidTip[0];
         double centroidTipYValues = ((Double) centroidTip[1]);

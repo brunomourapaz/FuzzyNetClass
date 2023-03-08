@@ -82,7 +82,7 @@ public class frmClassificador extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setName("frmClassificador"); // NOI18N
 
-        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder("Status"));
+        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Status", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 0, 16))); // NOI18N
         jPanel3.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
 
         lblStatusProcesso.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -113,7 +113,7 @@ public class frmClassificador extends javax.swing.JFrame {
                 .addGap(58, 58, 58))
         );
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createTitledBorder(""), "Informações do dataset"));
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createTitledBorder(""), "Informações para execução", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 0, 16))); // NOI18N
         jPanel1.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
 
         jLabel3.setText(" Dataset para classificar");
@@ -141,19 +141,18 @@ public class frmClassificador extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtArquivoSaida)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel4))
+                        .addComponent(jLabel4)
                         .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtArquivo)
-                            .addComponent(txtArquivoSaida))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(btnExecutar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnArquivo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                    .addComponent(txtArquivo, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel3)
+                        .addGap(397, 397, 397)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnExecutar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnArquivo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -171,19 +170,19 @@ public class frmClassificador extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtArquivoSaida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnExecutar))
-                .addContainerGap())
+                .addGap(89, 89, 89))
         );
 
-        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Logs"));
+        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Logs", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 0, 16))); // NOI18N
         jPanel2.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
 
-        jLabel1.setText("Log de erro");
+        jLabel1.setText("Erros");
 
         txaErro.setColumns(20);
         txaErro.setRows(5);
         jScrollPane1.setViewportView(txaErro);
 
-        jLabel2.setText("Log de execução");
+        jLabel2.setText("Execução");
 
         txaExecucao.setColumns(20);
         txaExecucao.setRows(5);
@@ -208,11 +207,12 @@ public class frmClassificador extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -230,13 +230,12 @@ public class frmClassificador extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(18, 18, 18)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(73, 73, 73)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(24, Short.MAX_VALUE))
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
@@ -304,7 +303,7 @@ public class frmClassificador extends javax.swing.JFrame {
                     // cria objeto do sistema de inferencia fuzzy 
                     // IntervalValuedFuzzyEvaluation fs = new IntervalValuedFuzzyEvaluation();
                     // cria objeto da classe Util com funções auxiliares
-                    //Util util = new Util();
+                    Util util = new Util();
                     while (line != null) {
 
                         // atualiza o JStatusProgresso
@@ -323,20 +322,31 @@ public class frmClassificador extends javax.swing.JFrame {
                         // double packetLengthMean = Double.parseDouble(vect[3]); // Packet Length Mean
                         String flowLabel = vect[3]; // Label
                         //double normFwdPacketLengthMean = Double.parseDouble(vect[]);  //NormFwd_Packet_Length_Mean
-                        double normPacketLengthMean = Double.parseDouble(vect[2]); // NormPacket_Length_Mean  
+                        double normPacketLengthMean = Double.parseDouble(vect[6]); // NormPacket_Length_Mean  
+                         
 
-                        double normFwdPacketLengthStd = Double.parseDouble(vect[0]);  // NormFwd_Packet_Length_Std
-                        double normBwdIATTotal = Double.parseDouble(vect[1]);  // NormBwd_IAT_Total
-                        int sequencial = Integer.parseInt(vect[4]); // sequencial
+                        double normFwdPacketLengthStd = Double.parseDouble(vect[7]);  // NormFwd_Packet_Length_Std
+                        double normBwdIATTotal = Double.parseDouble(vect[8]);  // NormBwd_IAT_Total
+                        int sequencial = Integer.parseInt(vect[9]); // sequencial
 
+                       /* if(cmbModelagem.getSelectedItem() == "Convencional"){
+                            JOptionPane.showMessageDialog(null, "Entrei");
+                        }*/
+                        
                         // cria objeto do sistema de inferencia fuzzy 
                         // e seta os valores das variáveis/atributos de entrada do sistema fuzzy
                         IntervalValuedFuzzyEvaluation fs
                                 = new IntervalValuedFuzzyEvaluation(normPacketLengthMean, normFwdPacketLengthStd,
                                         normBwdIATTotal, false, "maxmin", "minmax");
+                       
+                       //Object fs2 = util.getIntervalValuedFuzzySystemModel("Convencional", normPacketLengthMean, normFwdPacketLengthStd, normBwdIATTotal);
+                       //fs2.getClass().cast(IntervalValuedFuzzyEvaluation.class);
+                       
+                       
 
                         //executa o sistema de inferencia fuzzy
                         fs.getRating();
+                        
 
                         // Cria o objeto DataSet para armazenar os valores de saída
                         DataSet ds = new DataSet();
@@ -349,9 +359,11 @@ public class frmClassificador extends javax.swing.JFrame {
                         // ds.setPacketLengthMean(packetLengthMean);
                         ds.setFloxLabel(flowLabel);
                         // ds.setNormFwdPacketLengthMean(normFwdPacketLengthMean);
+                        // new DecimalFormat("#,##0.00").format(12005.11);
                         ds.setNormPacketLengthMean(normPacketLengthMean);
                         ds.setNormFwdPacketLengthStd(normFwdPacketLengthStd);
                         ds.setNormBwdIATTotal(Library.round(normBwdIATTotal, 6));
+                        //ds.setNormBwdIATTotal(new DecimalFormat("#,##0.00").format(normBwdIATTotal));
 
                         ds.setxPonctual(fs.getxPonctual());
                         ds.setxInf(fs.getxInf());
@@ -388,8 +400,8 @@ public class frmClassificador extends javax.swing.JFrame {
                         ds.setHighBackwardIatTotalUpperBound(fs.getHighBackwardIatTotalUpperBound());
 
                         // graus de pertinencia para saida Video
-                        ds.setLowVideoLowerBound(fs.getLowBackwardIatTotalLowerBound());
-                        ds.setLowVideoUpperBound(fs.getLowBackwardIatTotalUpperBound());
+                        ds.setLowVideoLowerBound(fs.getLowVideoLowerBound());
+                        ds.setLowVideoUpperBound(fs.getLowVideoUpperBound());
 
                         ds.setAverageVideoLowerBound(fs.getAverageVideoLowerBound());
                         ds.setAverageVideoUpperBound(fs.getAverageVideoUpperBound());
@@ -454,7 +466,7 @@ public class frmClassificador extends javax.swing.JFrame {
                     //String strFileName = vectOutFile[0]+"_out"+vectOutFile[1];
                     int pos = txtArquivo.getText().indexOf(".");
                     String strFileName = txtArquivo.getText().substring(0, pos);
-                    strFileName = strFileName + "_out.csv";
+                    strFileName = strFileName + "_out_redutor_centroid.csv";
 
                     strFileHeader = strFileHeader
                             //+ strSeparadorCsv + "biatNormalizado"
@@ -584,6 +596,7 @@ public class frmClassificador extends javax.swing.JFrame {
                     // Fim da ordenação com Pontual
                     
                      
+                   /*
                     ComparatorXuAndYager comparatorXuAndYager = new ComparatorXuAndYager();
 
                     Collections.sort(listDataSet, comparatorXuAndYager);
@@ -595,6 +608,7 @@ public class frmClassificador extends javax.swing.JFrame {
                     String strFileNameXuAndYager = strFileName.substring(0, pos);
                     strFileNameXuAndYager = strFileNameXuAndYager + "_xy.csv";
                     //JOptionPane.showMessageDialog(null, strFileNameXuAndYager);
+                    
 
                     //Writer writer = Files.newBufferedWriter(Paths.get(txtArquivoSaida.getText()+"xy"));
                     Writer writerXY = Files.newBufferedWriter(Paths.get(strFileNameXuAndYager));
@@ -603,14 +617,16 @@ public class frmClassificador extends javax.swing.JFrame {
 
                     writerXY.flush();
                     writerXY.close();
+                    
 
                     String commandAddHeaderFileXY = " sed -i '1i\\" + header + "\\' " + strFileNameXuAndYager;
                     lblStatusProcesso.setText("Adicionando cabeçalho aos arquivos de ordens admissíveis de XY");
                     localShell.executeCommand(commandAddHeaderFileXY);
                     // Fim da ordenação com Xu and Yager
+                    */
 
                     // Inicio da ordem Lex1
-                    ComparatorLex1 comparatorLex1 = new ComparatorLex1();
+                    /*ComparatorLex1 comparatorLex1 = new ComparatorLex1();
 
                     Collections.sort(listDataSet, comparatorLex1);
                     System.out.println("Com ordenação Lex1");
@@ -630,9 +646,10 @@ public class frmClassificador extends javax.swing.JFrame {
                     lblStatusProcesso.setText("Adicionando cabeçalho aos arquivos de ordens admissíveis de Lex1");
                     localShell.executeCommand(commandAddHeaderFileLex1);
                     // Fim da ordem Lex1
+                    */
 
                     // Inicio da ordem Lex2
-                    ComparatorLex2 comparatorLex2 = new ComparatorLex2();
+                    /*ComparatorLex2 comparatorLex2 = new ComparatorLex2();
 
                     Collections.sort(listDataSet, comparatorLex2);
                     System.out.println("Com ordenação Lex2");
@@ -652,9 +669,10 @@ public class frmClassificador extends javax.swing.JFrame {
                     lblStatusProcesso.setText("Adicionando cabeçalho aos arquivos de ordens admissíveis de Lex2");
                     localShell.executeCommand(commandAddHeaderFileLex2);
                     // Fim da ordem Lex2
+                    */
 
                     // Inicio da ordem A
-                    ComparatorA comparatorA = new ComparatorA();
+                    /*ComparatorA comparatorA = new ComparatorA();
 
                     Collections.sort(listDataSet, comparatorA);
                     System.out.println("Com ordenação A");
@@ -675,6 +693,7 @@ public class frmClassificador extends javax.swing.JFrame {
                     lblStatusProcesso.setText("Adicionando cabeçalho aos arquivos de ordens admissíveis de A");
                     localShell.executeCommand(commandAddHeaderFileA);
                     // Fim da ordem A
+                    */
 
                     lblStatusProcesso.setText("Finalizando arquivos com ordens admissíveis!");
 
@@ -696,7 +715,6 @@ public class frmClassificador extends javax.swing.JFrame {
             }
 
         }.start();
-
 
     }//GEN-LAST:event_btnExecutarActionPerformed
 
